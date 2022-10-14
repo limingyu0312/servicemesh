@@ -11,4 +11,6 @@ curl 172.31.3.2
 ```
 
 # 停止后清理
+```
 docker-compose down
+```
