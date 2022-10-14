@@ -24,7 +24,7 @@ static_resources:
   clusters:
   - name: web_cluster
     connect_timeout: 0.25s
-    type: STATIC
+    type: STRICT_DNS
     lb_policy: ROUND_ROBIN
     load_assignment:
       cluster_name: web_cluster
@@ -32,7 +32,4 @@ static_resources:
       - lb_endpoints:
         - endpoint:
             address:
-              socket_address: { address: 172.31.4.11, port_value: 80 }
-        - endpoint:
-            address:
-              socket_address: { address: 172.31.4.12, port_value: 80 }
+              socket_address: { address: myservice, port_value: 80 }
